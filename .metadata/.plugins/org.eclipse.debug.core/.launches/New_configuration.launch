@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.api.tools.usescan">
+    <intAttribute key="org.eclipse.pde.api.tools.ui.REPORT_TYPE" value="1"/>
+    <intAttribute key="org.eclipse.pde.api.tools.ui.SEARCH_MODIFIERS" value="2"/>
+</launchConfiguration>

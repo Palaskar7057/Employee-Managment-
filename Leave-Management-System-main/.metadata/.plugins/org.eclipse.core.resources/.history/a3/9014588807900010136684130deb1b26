@@ -1,0 +1,32 @@
+package com.example.education.demo.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+
+import com.example.education.demo.model.Admin;
+import com.example.education.demo.service.AdminService;
+
+
+@RestController
+@RequestMapping("/admin")
+public class AdminController {
+
+    @Autowired
+    private AdminService adminService;
+
+    @PostMapping("/register")
+    public Admin register(@RequestBody Admin admin){
+        return adminService.register(admin);
+    }
+
+    @PostMapping("/login")
+    public Object login(@RequestBody Admin admin) {
+        Admin loggedIn = adminService.login(admin.getUsername(), admin.getPassword());
+        if (loggedIn != null) {
+            return loggedIn; // return admin details
+        } else {
+            return "Invalid Username or Password!";
+        }
+    }
+}
